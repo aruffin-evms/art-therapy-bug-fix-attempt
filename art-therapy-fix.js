@@ -1,24 +1,24 @@
+
 const virtualTourModule = document.getElementById('tour-evms')
 
-const findParent = document.querySelector('.specializations').parentElement
+// find div i want to move
+const specializationsNode = document.querySelector('.specializations')
 
-let targetNode = document.querySelector('.specializations').parentElement.childNodes
+// clone the specializations node and add an ID. the cloned node should be inserted above the virtual tour
+const clonedNode = specializationsNode.cloneNode(true)
+clonedNode.setAttribute('id', 'tag-this-node')
+
+
+
+// remove node from dom after cloning
+specializationsNode.remove()
+
+// insert removed node above virtual tour module
+// ______________________________________________
+// can't detect parent div with the ID mm-0. target attempts failed
+// let targetNode = document.querySelector('.specializations').parentElement.childNodes
 // targetNode = targetNode[13].parentNode.childNodes 
 
 // targetNode = targetNode[6]
 
-let selectedNode = document.querySelector('.specializations').parentElement.childNodes
-
-console.log(selectedNode)
-selectedNode = selectedNode[17]
-
-
-const cloneNode = selectedNode.cloneNode(true)
-cloneNode.setAttribute('id', 'tag-this-node')
-console.log(cloneNode)
-
-// remove node from dom after cloning
-selectedNode.remove()
-
-// insert removed node above virtual tour module
-virtualTourModule.insertBefore(cloneNode, virtualTourModule) 
+// virtualTourModule.insertBefore(cloneNode, virtualTourModule) 
